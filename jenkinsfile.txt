@@ -2,7 +2,7 @@
 pipeline{
   tools{
         jdk 'myjava'
-        maven 'mymaven'
+        maven 'mymaven
   }
   agent none
     stages{
@@ -12,15 +12,15 @@ pipeline{
 		 echo 'cloning..'
                  git 'https://github.com/SobhaReddy/DevOpsClassCodes.git'
                 }
-          }
-          stage('Compile'){
-              agent any
+        }
+        stage('Compile'){
+            agent any
               steps{
                   echo 'compiling..'
                   sh 'mvn compile'
               }
-          }
-          stage('CodeReview'){
+         }
+         stage('CodeReview'){
               agent any
               steps{
 		  echo 'codeReview'
@@ -55,6 +55,7 @@ pipeline{
               steps{
                   sh 'mvn package'
               }
-          }
+        }
      }
-  }
+
+ }
